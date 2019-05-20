@@ -21,6 +21,11 @@
       <%= link_to new_posts_path, class: "nav-link" do  %>
         <i class="far fa-newspaper"> New post</i> 
       <% end %>
+        
+      <%= link_to new_profiles_path, class: "nav-link" do  %>
+        <i class="fas fa-user-circle"> Me</i> 
+      <% end %>
+      
        <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do  %>
         <i class="fas fa-sign-out-alt"> Log out</i> 
       <% end %>

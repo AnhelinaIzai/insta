@@ -6,7 +6,10 @@
     	<p>Create new post</p>
 	<% else %>
     <% @posts.each do |post| %>
-    <p><%= image_tag post.image.url %></<br></p>
+
+ 	<%= post.user_id%><br/>
+    <p><%= image_tag post.image.url %><br></p>
+    <%= post.user_id%><br/>
     <p>Title:  <%= post.title%><br/></p>
    		<%end%>
 	<%end%>
@@ -14,3 +17,4 @@
      	 <div class="col-4"></div>
      </div>
 </div>
+  

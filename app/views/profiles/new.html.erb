@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+<%= form_for @profile, url: profiles_path do |f| %>
+
+<% if @profile.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this post from being saved:</h2>
+ 
+    <ul>
+    <% @profile.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+    <div class="field">
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "form"  %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.text_field :age, autofocus: true, autocomplete: "age", class: "form"  %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description, autofocus: true, autocomplete: "description", class: "form"  %>
+  </div>
+  <div class="field1">
+  <%= f.file_field :image %><br />
+</div>
+   <div class="actions">
+        <%= f.submit "Create", class: "btn btn-primary" %>
+      </div>
+<% end %>
+</div>
+<div class="col-4"></div>
+</div>
+</div>
