@@ -1,0 +1,21 @@
+<%= form_for @profile, url: profiles_path do |f| %>
+
+<% if @profile.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this post from being saved:</h2>
+ 
+    <ul>
+    <% @profile.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  Nickname: <%= f.text_field :nickname %><br />
+  Age: <%= f.text_field :age %><br />
+  Description: <%= f.text_field :description %><br />
+  <%= f.file_field :image %><br />
+
+  <%= f.submit "Create" %>
+<% end %>

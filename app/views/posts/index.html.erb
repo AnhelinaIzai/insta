@@ -2,6 +2,7 @@
     <p>Create new post</p>
 <% else %>
     <% @posts.each do |post| %>
+    <%= post.user_id%><br/>
     <%= post. title%><br/>
     <%= image_tag post.image.url %>
     <%end%>
