@@ -1,6 +1,10 @@
-<%= form_for @post, url: posts_path do |f| %>
+<div class="container">
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <%= form_for @post, url: posts_path do |f| %>
 
-<% if @post.errors.any? %>
+    <% if @post.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
  
@@ -11,8 +15,19 @@
     </ul>
   </div>
 <% end %>
-
-  <%= f.text_field :title %><br />
-  <%= f.file_field :image %><br />
-  <%= f.submit "Create" %>
+     <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, autofocus: true, autocomplete: "title", class: "form"  %>
+  </div>
+   
+       <div class="field1">
+    <%= f.file_field :image %>
+    </div>
+   <div class="actions">
+        <%= f.submit "Upload", class: "btn btn-primary" %>
+      </div>
 <% end %>
+</div>
+<div class="col-4"></div>
+</div>
+</div>

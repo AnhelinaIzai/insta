@@ -1,8 +1,16 @@
-<% if @posts == [] %>
-    <p>Create new post</p>
-<% else %>
+<div class="container">
+	<div class="row">
+		<div class="col-4"></div>
+		<div class="col-4">
+	<% if @posts == [] %>
+    	<p>Create new post</p>
+	<% else %>
     <% @posts.each do |post| %>
-    <%= post. title%><br/>
-    <%= image_tag post.image.url %>
-    <%end%>
-<%end%>
+    <p><%= image_tag post.image.url %></<br></p>
+    <p>Title:  <%= post.title%><br/></p>
+   		<%end%>
+	<%end%>
+      </div>
+     	 <div class="col-4"></div>
+     </div>
+</div>
