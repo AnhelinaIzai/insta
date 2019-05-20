@@ -1,0 +1,27 @@
+.col-4{
+	margin-top: 100px;
+	text-align: center;
+	
+}
+h2{
+	font-family: 'Permanent Marker', cursive;
+}
+.field{
+	font-family: 'Spectral', serif;
+	font-size: 20px;
+	
+}
+.form{
+	border-radius: 25px 25px 25px 25px;
+	border: 1px solid #000000;
+}
+.form:hover{
+		border-radius: 25px 25px 25px 25px;
+	border: 1px solid #36418c;
+}
+.btn {
+	background-color:#36418c !important;
+		border-radius: 25px 25px 25px 25px;
+	border: 1px solid #36418c;
+	margin-top: 5px;
+}
