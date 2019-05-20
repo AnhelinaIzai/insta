@@ -1,1 +1,8 @@
-<h1>index</h1>
+<% if @posts == [] %>
+    <p>Create new post</p>
+<% else %>
+    <% @posts.each do |post| %>
+    <%= post. title%><br/>
+    <%= image_tag post.image.url %>
+    <%end%>
+<%end%>
