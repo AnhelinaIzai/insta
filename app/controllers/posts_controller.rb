@@ -13,7 +13,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    if @post = Post.create(post_params)
+     @post = current_user.posts.build(post_params)
+     if @post.save
       flash[:success] = "Your post has been created!"
       redirect_to root_path
     else
@@ -36,8 +37,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
+    if @post.destroy
     redirect_to root_path
+   end
   end
 
 
@@ -48,7 +50,7 @@ class PostsController < ApplicationController
     end
 
     def set_post
-      @post = Post.find_by(params[:id])
+      @post = Post.find(params[:id])
     end
 
 end
