@@ -1,7 +1,3 @@
-<div class="container">
-  <div class="row">
-    <div class="col-4"></div>
-    <div class="col-4">
 <%= form_for @profile, url: profiles_path do |f| %>
 
 <% if @profile.errors.any? %>
@@ -15,26 +11,11 @@
     </ul>
   </div>
 <% end %>
-    <div class="field">
-    <%= f.label :nickname %><br />
-    <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "form"  %>
-  </div>
-  <div class="field">
-    <%= f.label :age %><br />
-    <%= f.text_field :age, autofocus: true, autocomplete: "age", class: "form"  %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description, autofocus: true, autocomplete: "description", class: "form"  %>
-  </div>
-  <div class="field1">
+
+  Nickname: <%= f.text_field :nickname %><br />
+  Age: <%= f.text_field :age %><br />
+  Description: <%= f.text_field :description %><br />
   <%= f.file_field :image %><br />
-</div>
-   <div class="actions">
-        <%= f.submit "Create", class: "btn btn-primary" %>
-      </div>
+
+  <%= f.submit "Create" %>
 <% end %>
-</div>
-<div class="col-4"></div>
-</div>
-</div>

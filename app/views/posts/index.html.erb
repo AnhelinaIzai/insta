@@ -6,10 +6,8 @@
     	<p>Create new post</p>
 	<% else %>
     <% @posts.each do |post| %>
-
- 	<%= post.user_id%><br/>
     <p><%= image_tag post.image.url %><br></p>
-    <%= post.user_id%><br/>
+    <p><%=link_to post.user.profile.nickname, profiles_path%></p>
     <p>Title:  <%= post.title%><br/></p>
    		<%end%>
 	<%end%>
