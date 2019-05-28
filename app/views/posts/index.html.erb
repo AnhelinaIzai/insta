@@ -6,9 +6,13 @@
     	<p>Create new post</p>
 	<% else %>
     <% @posts.each do |post| %>
-    <p><%= image_tag post.image.url %><br></p>
+    <p><%= image_tag post.image.url(:medium)%><br></p>
     <p><%=link_to post.user.profile.nickname, profiles_path%></p>
-    <p>Title:  <%= post.title%><br/></p>
+    <p><i> <%= post.title%></i><br/></p>
+    <%if%>
+      <%current_user.id == post.user.id%>
+      <%= link_to "Delete post", posts_path(post.user.id), method: :delete%>
+    <%end%>
    		<%end%>
 	<%end%>
       </div>

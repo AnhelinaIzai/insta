@@ -21,9 +21,14 @@
       <%= link_to new_posts_path, class: "nav-link" do  %>
         <i class="far fa-newspaper"> New post</i> 
       <% end %>
-        
-      <%= link_to new_profiles_path, class: "nav-link" do  %>
-        <i class="fas fa-user-circle"> Me</i> 
+       <%if current_user.profile.nil?%> 
+           <%= link_to new_profiles_path, class: "nav-link" do  %>
+          <i class="fas fa-user-circle"> Me</i> 
+          <%end%>
+      <% else %>
+           <%= link_to profiles_path(current_user.id), class: "nav-link" do  %>
+          <i class="fas fa-user-circle"> Me</i>  
+      <%end%>
       <% end %>
       
        <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do  %>
